@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) 
+    {
+        int start = 0;
+        int end = digits.size() - 1;
+
+        while(start <= end)
+        {
+            if(digits[end] < 9)
+            {
+                digits[end]++;
+                break;
+            }
+            else
+            {
+                digits[end] = 0;
+                end--;
+            }
+        }
+
+        if(digits[start] == 0)
+        {
+            digits.insert(digits.begin(), 1);
+        }
+        return digits;
+    }
+};
